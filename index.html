@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cassiopeia Space Team | Exploring the Future</title>
+    <style>
+        /* --- GLOBAL STYLES --- */
+        :root {
+            --primary-blue: #00d2ff;
+            --secondary-blue: #0056b3;
+            --dark-bg: #050a14;
+            --card-bg: #0f172a;
+            --text-color: #e2e8f0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        a { text-decoration: none; color: white; }
+
+        /* --- HEADER & NAV --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: rgba(5, 10, 20, 0.9);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-sizing: border-box;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .logo-container img {
+            height: 60px; /* Adjust based on your logo file */
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a:hover {
+            color: var(--primary-blue);
+            transition: 0.3s;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle at center, #112240 0%, #050a14 100%);
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #fff, var(--primary-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 600px;
+            margin-bottom: 30px;
+            color: #94a3b8;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            background-color: var(--primary-blue);
+            color: #000;
+            font-weight: bold;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            transition: transform 0.2s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            background-color: white;
+        }
+
+        /* --- MISSION SECTION --- */
+        .mission {
+            padding: 80px 50px;
+            text-align: center;
+            background-color: #0b1120;
+        }
+
+        .mission h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 40px auto 0;
+        }
+
+        .mission-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #1e293b;
+        }
+
+        .mission-card h3 {
+            color: var(--primary-blue);
+        }
+
+        /* --- ASTRONAUT PROFILE SECTION --- */
+        .astronaut-section {
+            padding: 100px 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            background: linear-gradient(180deg, #0b1120 0%, #050a14 100%);
+        }
+
+        .astro-image {
+            flex: 1;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .astro-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 210, 255, 0.2);
+            border: 2px solid #1e293b;
+        }
+
+        .astro-info {
+            flex: 1;
+            max-width: 500px;
+        }
+
+        .astro-info h2 {
+            font-size: 3rem;
+            margin: 0;
+            color: white;
+        }
+
+        .astro-info h4 {
+            color: var(--primary-blue);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 0;
+        }
+
+        .astro-info p {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
+
+        .flag-icon {
+            display: inline-block;
+            width: 30px;
+            height: 20px;
+            background: linear-gradient(to bottom, #ce1126 33%, #fff 33%, #fff 66%, #000 66%);
+            margin-right: 10px;
+            vertical-align: middle;
+            border-radius: 3px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 40px;
+            background-color: #02040a;
+            border-top: 1px solid #1e293b;
+            color: #64748b;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            header { padding: 15px 20px; }
+            .astronaut-section { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo-container">
+            <!-- Replace src with your logo file -->
+            <img src="logo.png" alt="Cassiopeia Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#mission">Mission</a></li>
+                <li><a href="#team">Team</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>CASSIOPEIA</h1>
+        <p>Pioneering the next frontier of space exploration. From Low Earth Orbit to the stars.</p>
+        <a href="#mission" class="btn">Our Mission</a>
+    </section>
+
+    <!-- Mission Section -->
+    <section id="mission" class="mission">
+        <h2>Our Objectives</h2>
+        <p style="max-width: 700px; margin: 0 auto; color: #94a3b8;">
+            Cassiopeia Space Team is dedicated to advancing human presence in the cosmos through cutting-edge technology and international cooperation.
+        </p>
+        
+        <div class="mission-grid">
+            <div class="mission-card">
+                <h3>🚀 Orbital Transport</h3>
+                <p>Developing next-generation vehicles for safe and efficient travel to the ISS and beyond.</p>
+            </div>
+            <div class="mission-card">
+                <h3>🌍 Earth Observation</h3>
+                <p>Using satellite technology to monitor climate change and protect our home planet.</p>
+            </div>
+            <div class="mission-card">
+                <h3>🔭 Deep Space Research</h3>
+                <p>Conducting scientific experiments in microgravity to unlock the secrets of the universe.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Astronaut Section -->
+    <section id="team" class="astronaut-section">
+        <div class="astro-image">
+            <!-- Replace src with your astronaut image -->
+            <img src="astronaut.jpg" alt="Mohamed Zayada in Flight Suit">
+        </div>
+        <div class="astro-info">
+            <h4>Flight Commander</h4>
+            <h2>Mohamed Zayada</h2>
+            <p>
+                A pioneer of modern aerospace, Mohamed represents the spirit of the Cassiopeia team. 
+                With extensive training in flight dynamics and orbital mechanics, he is ready to lead 
+                our upcoming missions to the edge of the atmosphere.
+            </p>
+            <p>
+                <span class="flag-icon"></span> Representing Egypt & The Cassiopeia Team
+            </p>
+            <a href="#" class="btn" style="background: transparent; border: 1px solid var(--primary-blue); color: white;">View Full Bio</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Cassiopeia Space Team. All Rights Reserved.</p>
+        <p>Ad Astra Per Aspera (To the stars through difficulties)</p>
+    </footer>
+
+</body>
+</html>
